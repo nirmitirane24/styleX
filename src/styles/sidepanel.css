@@ -1,0 +1,285 @@
+
+
+@font-face {
+  font-family: 'MonoSpace';
+  src: url('font/SpaceMono-Regular.ttf') format('truetype');
+  font-style: normal;
+}
+
+body {
+  align-items: center;
+  text-align: left;
+  background: linear-gradient(to right, #282A2C, #444648);;
+  font-family: 'MonoSpace', monospace;
+  margin: 0;
+}
+
+#panelHeading {
+  max-height: 15vh;
+  min-height: 15vh;/* Ensure the container has enough height */
+  display: flex; /* Center content inside */
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #b2d4e4;
+  text-align: center;
+  margin: 10px 10px;
+  background-color: #f7f7f8;
+  padding: 0px;
+  border-radius: 12px;
+  color: rgb(67, 67, 67);
+}
+
+#contentPanel {
+  border: 5px solid #b2d4e4;
+  margin: 5px 10px;
+  padding: 10px;
+  background-color: #f7f7f8;
+  border-radius: 12px;
+  color: rgb(67, 67, 67);
+  min-height: 60vh;
+  max-height: 60vh; /* Adjust for header and footer height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+#panelFooter {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* margin: 10px; */
+  border: 5px solid #b2d4e4;
+  background-color: #f7f7f8;
+  border-radius: 12px;
+  color: rgb(67, 67, 67);
+  position: fixed;
+  bottom: 10px; /* Ensure space at the bottom matches margin */
+  left: 10px; /* Align with contentPanel margin */
+  right: 10px; /* Align with contentPanel margin */
+  box-shadow: 2px -2px 50px rgba(136, 136, 136, 50); /* Optional shadow for better visibility */
+}
+
+#chatInput {
+  flex: 1;
+  resize: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  height: 40px;
+}
+#sendButton:hover {
+  transition: all 1s ;
+  transform: scale(1.1);
+  background-color: #D56677;
+}
+#sendButton {
+  transition: all 1s ;
+  box-shadow: 2px 2px 3px #999;
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #5182ED;
+  color: white;
+  border: none;
+  border-radius: 35%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+#sendButton:hover {
+  transition: all 1s ;
+  background-color: #D56677;
+}
+
+#sendButton svg {
+  transition: all 1s ;
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+#styleimg {
+  max-height: 100%; /* Ensure it doesn't exceed the container height */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+  object-fit: contain; /* Maintain aspect ratio while fitting in the container */
+  padding: 0px;
+  transform: scale(0.5); /* Adjust scale if needed */
+}
+
+.arrow-up {
+  transition: all 1s;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35%;
+  margin-bottom: 60%;
+  border-bottom: 15px solid white;
+}
+
+.arrow-up:active {
+  background-color: #5182ED;
+}
+
+
+#selectElement {
+  transition: all 1s;
+  box-shadow: 2px 2px 3px #999; 
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #5182ED; 
+  color: white;
+  border: none;
+  border-radius: 12px; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px; 
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  outline: none;
+}
+
+#selectElement:hover {
+  transition: all 1s; 
+  transform: scale(1.05); 
+  background-color: #D56677; 
+}
+
+#copyhtmlbutton,#copycssbutton{
+  transition: all 1s;
+  box-shadow: 2px 2px 3px #999; 
+  padding: 10px;
+  background-color: #a4a7ac; 
+  color: white;
+  border: none;
+  border-radius: 12px; 
+  cursor: pointer;
+  /* display: inline-flex; */
+  align-items: center;
+  justify-content: center;
+  height: 40px; 
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  outline: none;
+  display: flex; /* Align items in a row */
+  gap: 5px; /* Add spacing between buttons */
+  justify-content: center; /* Center buttons horizontally */
+  margin: 10px 0;
+}
+
+#msgs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between messages */
+}
+
+.user-msg, .ai-msg {
+  max-width: 70%; /* Limit width for better readability */
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 5px 10px;
+  word-wrap: break-word; /* Prevent text overflow */
+}
+
+.user-msg {
+  align-self: flex-end; /* Align to the right */
+  background-color: #5182ED; /* Blue background for user */
+  color: white; /* White text for contrast */
+  text-align: left;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.ai-msg {
+  align-self: flex-start; /* Align to the left */
+  background-color: #d9d6d6; /* Light grey background for AI */
+  color: #333; /* Darker text for readability */
+  text-align: left;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Add rounded triangle for message bubble effect */
+.user-msg::after, .ai-msg::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.user-msg::after {
+  border-width: 0 10px 10px 0;
+  border-color: transparent #5182ED transparent transparent;
+  top: 10px;
+  right: -10px; /* Position arrow to the right */
+}
+
+.ai-msg::after {
+  border-width: 10px 10px 0 0;
+  border-color: #bbb8b8 transparent transparent transparent;
+  top: 10px;
+  left: -10px; /* Position arrow to the left */
+}
+
+.thinking-msg {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  color: #666;
+  text-align:left;
+  margin: 10px 0;
+}
+
+.thinking-msg::after {
+  content: '...'; /* Start with three dots */
+  display: inline-block;
+  animation: thinkingDots 1.5s infinite;
+}
+
+
+/* Keyframes for animating the dots */
+@keyframes thinkingDots {
+  0% {
+    content: '';
+  }
+  33% {
+    content: '.';
+  }
+  66% {
+    content: '..';
+  }
+  100% {
+    content: '...';
+  }
+}
+
+
+hr{
+  color: grey;
+  width: 50%;
+}
+
+*::-webkit-scrollbar {
+  background-color: transparent;
+  width: 15px;
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 4px solid transparent;
+  background-color: rgba(0,0,0,0.2);
+  background-clip: content-box;
+}

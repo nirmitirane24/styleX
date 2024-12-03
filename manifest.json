@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "styleX",
+  "version": "1.0.0",
+  "description": "A tool for seamless AI-user collaboration to analyze, modify, and understand website HTML and CSS.",
+  "permissions": ["sidePanel", "scripting", "activeTab", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel.html"
+  },
+  "action": {
+    "default_title": "styleX",
+    "default_icon": {
+      "16": "src/styles/img/logo16.jpg",
+      "48": "src/styles/img/logo48.jpg",
+      "128":"src/styles/img/logo128.jpg"
+    }
+  },
+  "icons": {
+    "16": "src/styles/img/logo16.jpg",
+    "48": "src/styles/img/logo48.jpg",
+    "128":"src/styles/img/logo128.jpg"
+  }
+}
