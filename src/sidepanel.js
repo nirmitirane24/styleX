@@ -67,7 +67,7 @@ function giveGeminiContext(htmlTag, css) {
   console.log("Sending context to Gemini Nano...");
 
   const thinkingElement = document.createElement("div");
-  thinkingElement.id = "thinking-msg";
+  thinkingElement.className = "thinking-msg";
   thinkingElement.textContent = "THINKING...";
   appendToMsgs(thinkingElement);
 
@@ -81,7 +81,7 @@ function giveGeminiContext(htmlTag, css) {
 
         const richTextResponse = convertMarkdownToRichText(response);
         const responseElement = document.createElement("div");
-        responseElement.id = "ai-msg";
+        responseElement.className = "ai-msg";
         responseElement.innerHTML = richTextResponse; 
         appendToMsgs(responseElement);
       })
